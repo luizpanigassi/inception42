@@ -1,6 +1,16 @@
-CREATE DATABASE IF NOT EXISTS wordpress;
-CREATE USER IF NOT EXISTS 'shadow_admin'@'%' IDENTIFIED BY 'senha_segura';
-GRANT ALL PRIVILEGES ON wordpress.* TO 'shadow_admin'@'%';
-CREATE_USER IF NOT EXISTS 'tonto_user'@'%' IDENTIFIED BY 'outra_senha';
-GRANT SELECT, INSERT, UPDATE ON wordpress.* TO 'tonto_user'@'%';
+-- Set root password
+ALTER USER 'root'@'localhost' IDENTIFIED BY '${MYSQL_ROOT_PASSWORD}';
+
+-- Create database
+CREATE DATABASE IF NOT EXISTS ${MYSQL_DATABASE};
+
+-- Create WordPress user
+CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';
+GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO '${MYSQL_USER}'@'%';
+
+-- Create admin user (not containing 'admin' in name as per requirements)
+CREATE USER IF NOT EXISTS 'shadow_user'@'%' IDENTIFIED BY 'shadow_pass123';
+GRANT ALL PRIVILEGES ON ${MYSQL_DATABASE}.* TO 'shadow_user'@'%';
+
+-- Flush privileges
 FLUSH PRIVILEGES;
