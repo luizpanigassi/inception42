@@ -1,0 +1,14 @@
+DOMAIN_NAME=luinasci.42.fr
+MYSQL_ROOT_PASSWORD=trustno1
+MYSQL_USER=luinasci_user
+MYSQL_PASSWORD=trustno1
+MYSQL_DATABASE=wordpress
+
+WORDPRESS_ADMIN_USER=luinasci
+WORDPRESS_ADMIN_PASSWORD=trustno1
+WORDPRESS_ADMIN_EMAIL=luiz.panigassi@gmail.com
+WORDPRESS_TITLE=Inception Site
+WORDPRESS_URL=https://luinasci.42.fr
+
+PHP_FPM_USER=www-data
+PHP_FPM_GROUP=www-data
