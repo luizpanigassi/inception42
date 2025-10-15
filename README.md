@@ -284,7 +284,7 @@ inception/
                 └── init.sql         # Database setup queries
 ```
 
-## � Step-by-Step Development Guide
+## Step-by-Step Development Guide
 
 This comprehensive guide will help you build your own Inception project from scratch, following the 42 School subject requirements exactly.
 
