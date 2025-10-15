@@ -1,0 +1,80 @@
+SCALE FOR PROJECT INCEPTION
+
+You should evaluate 1 student in this team
+
+Git repository
+
+Introduction
+Please comply with the following rules: 
+
+- Remain polite, courteous, respectful and constructive throughout the evaluation process. 
+- Identify with the student or group whose work is evaluated the possible dysfunctions in their project. 
+- You must consider that there might be some differences in how your peers might have understood the project's instructions and the scope of its functionalities. 
+- The pedagogy is useful only and only if the peer-evaluation is done seriously. 
+
+Guidelines
+- Only grade the work that was turned in the Git repository of the evaluated student or group. 
+- Double-check that the Git repository belongs to the student(s). Ensure that the project is the one expected. 
+- Check carefully that no malicious aliases was used to fool you. 
+- Review together any scripts used to facilitate the grading. 
+
+Preliminaries
+If cheating is suspected, the evaluation stops here. Use the "Cheat" flag to report it.
+
+- Defense can only happen if the evaluated student or group is present.
+- If no work has been submitted (or wrong files, wrong directory, or wrong filenames), the grade is 0.
+- For this project, you have to clone their Git repository on their station.
+
+General instructions
+- If you don't know how to check a requirement, the evaluated student has to help you.
+- All files to configure the application must be inside a srcs folder at the root of the repository.
+- A Makefile must be located at the root of the repository.
+- Before starting, run:
+
+docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q) 2>/dev/null
+
+Mandatory part
+The project sets up a small infrastructure composed of different services using docker-compose.
+
+Project overview
+- The evaluated person must explain how Docker and docker-compose work.
+- Explain the difference between a Docker image with and without docker-compose.
+- Explain the benefit of Docker compared to VMs.
+- Explain the pertinence of the directory structure required for this project.
+
+Simple setup
+- Ensure NGINX is accessible via port 443 only and uses SSL/TLS.
+- Ensure WordPress is installed and configured properly (not the installation page).
+- Access via https://login.42.fr should work; http://login.42.fr should not.
+
+Docker Basics
+- There must be one Dockerfile per service.
+- Dockerfiles cannot be empty or missing.
+- No ready-made images (e.g., DockerHub) can be used.
+- Images must be based on Alpine or Debian Buster.
+- Each image must have the same name as its service.
+- All services must be set up via docker-compose.
+
+Docker Network
+- docker-network must be used.
+- The student must explain docker-network clearly.
+
+NGINX with SSL/TLS
+- Ensure a Dockerfile exists.
+- Container must be created and accessible via https only.
+- TLS v1.2 or v1.3 must be used (self-signed allowed).
+
+WordPress with php-fpm and volume
+- Ensure Dockerfile exists (no NGINX inside).
+- Ensure a volume exists with path /home/login/data/.
+- Ensure admin username doesn’t contain “admin”.
+- Ensure content changes persist.
+
+MariaDB and volume
+- Ensure Dockerfile exists (no NGINX inside).
+- Ensure a volume exists with path /home/login/data/.
+- Root login with no password must fail.
+- Database must not be empty.
+
+Persistence
+- After rebooting the VM, docker-compose up must restore the configuration and data.
