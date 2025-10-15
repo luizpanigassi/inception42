@@ -9,7 +9,7 @@
 
 A complete Docker infrastructure project that sets up a secure LEMP stack (Linux, NGINX, MariaDB, PHP) with WordPress, using Docker Compose and custom Dockerfiles. This project is part of the 42 School curriculum.
 
-## � Step-by-Step Development Guide
+##  Step-by-Step Development Guide
 
 This comprehensive guide will help you build your own Inception project from scratch, following the 42 School subject requirements exactly. Each step includes detailed explanations of WHY we're doing things, not just HOW.
 
