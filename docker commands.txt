@@ -1,0 +1,24 @@
+[DOCKER CLEANER]
+docker stop $(docker ps -qa); docker rm $(docker ps -qa); docker rmi -f $(docker images -qa); docker volume rm $(docker volume ls -q); docker network rm $(docker network ls -q) 2>/dev/null
+
+[BUILDER]
+make
+
+[HTTPS TEST WORKS]
+curl -k https://luinasci.42.fr
+
+[HTTPS TEST FAILS]
+curl http://luinasci.42.fr
+
+[DOCKER STRUCTURE]
+cat srcs/docker-compose.yml
+
+[IMAGES]
+docker images | grep inception
+
+[SHOW CONTAINERS]
+docker ps
+
+[SHOW NETWORK AND CONNECTIVITY]
+docker network ls
+docker network inspect srcs_inception_network
